@@ -23,19 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ShapeGame.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Scripts/ShapeGame.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="466" selection-end="466" vertical-scroll-proportion="0.6263158" vertical-offset="102" max-vertical-offset="1224">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Shapes.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Shapes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="7" selection-start="295" selection-end="295" vertical-scroll-proportion="-3.8076923" vertical-offset="71" max-vertical-offset="425">
+            <state line="19" column="7" selection-start="552" selection-end="552" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="425">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -43,10 +34,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ShapeGame.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Scripts/ShapeGame.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="18" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.73157895" vertical-offset="657" max-vertical-offset="1343">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Engine.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="0" selection-start="3732" selection-end="3732" vertical-scroll-proportion="0.0" vertical-offset="2133" max-vertical-offset="3383">
+            <state line="65" column="5" selection-start="1580" selection-end="1580" vertical-scroll-proportion="0.0" vertical-offset="874" max-vertical-offset="3927">
               <folding />
             </state>
           </provider>
@@ -140,11 +140,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Confirmation" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.Shapes.html">
     <configuration default="false" name="Shapes.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:50070/Shapes/Shapes.html">
@@ -206,6 +210,7 @@
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
     <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="true">C:\Users\Dana\AppData\Roaming\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TaskManager">
@@ -217,7 +222,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -308,25 +313,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="5" selection-start="1580" selection-end="1580" vertical-scroll-proportion="0.0" vertical-offset="874" max-vertical-offset="3927">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Shapes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="7" selection-start="295" selection-end="295" vertical-scroll-proportion="-3.8076923" vertical-offset="71" max-vertical-offset="425">
+        <state line="19" column="7" selection-start="552" selection-end="552" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="425">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="0" selection-start="3732" selection-end="3732" vertical-scroll-proportion="0.0" vertical-offset="2031" max-vertical-offset="3383">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/ShapeGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="466" selection-end="466" vertical-scroll-proportion="0.6263158" vertical-offset="102" max-vertical-offset="1224">
+        <state line="55" column="18" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.73157895" vertical-offset="657" max-vertical-offset="1343">
           <folding />
         </state>
       </provider>

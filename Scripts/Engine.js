@@ -50,7 +50,8 @@ Rectangle.prototype.draw=drawRectangle;
 function drawRectangle()
 {
     var context=getCanvasContext(this.canvasname);
-    context.rect(this.width,this.height,this.positionX,this.positionY);
+
+    context.rect(this.positionX, this.positionY, this.width,this.height);
     if(this.fillColor)
     {   context.fillStyle=this.fillColor;
         context.fill();
@@ -59,6 +60,20 @@ function drawRectangle()
     context.strokeStyle = this.color;
     context.stroke();
 }
+Rectangle.prototype.isPointInside=function(x,y)
+{
+  if( x < this.positionX || x > this.positionX  + this.width)
+  {//alert("x"+x.toString()+" "+ y.toString()+" "+this.positionX.toString()+" "+(this.positionX+this.width).toString());
+      return false;}
+
+  if( y < this.positionY || y > this.positionY + this.height)
+  {//alert("y"+x.toString()+" "+ y.toString()+" "+this.positionY.toString()+" "+(this.positionY+this.height).toString());
+      return false;
+  }
+
+    return true;
+}
+
 function Circle(canvasname,positionX,positionY,radius,color,fillcolor)
 {
     this.canvasname=canvasname;
@@ -84,6 +99,13 @@ function drawCircle()
         context.fillStyle=this.fillcolor;
         context.fill();
     }
+}
+Circle.prototype.isPointInside=function(x,y)
+{
+    if(Math.sqrt(Math.pow(this.positionX-x,2)+Math.pow(this.positionY-y,2))>this.radius)
+        return false;
+    else
+        return true;
 }
 
 function Triangle(canvasname,positionTopX,positionTopY,height,basisLength,color, fillcolor)
@@ -119,17 +141,27 @@ function drawTriangle() {
 }
 function area(ax,ay,bx,by,cx,cy)
 {
-    return parseFloat(ax(bx-cy)+bx(xy-ay)+cx(ay-by))/2;
+    return Math.abs(parseFloat(ax*(bx-cy)+bx*(cy-ay)+cx*(ay-by)))/2;
 }
 Triangle.prototype.isPointInside=function (x, y){
-
-
-/*var lambda1=parseFloat((this.y2-this.y3)*(x-this.x3)+(this.x3-this.x2)*(y-this.y3))/((this.y2-this.y3)*(this.x1-this.x3)+(this.x3-this.x2)*(this.y1-this.y3))
+    /*var a1= area(this.x1,this.y1,this.x2,this.y2,x,y);
+     var a2=area(this.x2,this.y2,this.x3,this.y3,x,y);
+     var a3=area(this.x1,this.y1,this.x3,this.y3,x,y);
+     var a4= area(this.x1,this.y1,this.x2,this.y2,this.x3,this.y3);
+     alert(a1.toString()+" "+a2.toString()+" "+a3.toString()+" "+a4.toString());
+     if(a1+a2+a3==a4)*/
+    /*var s1= (this.x2-this.x1)*(this.y-this.y1)-(this.x-this.x1)*(this.y2-this.y1);
+     var s2= (this.x3-this.x2)*(this.y-this.y2)-(this.x-this.x2)*(this.y3-this.y2);
+     var s3= (this.x1-this.x2)*(this.y-this.y3)-(this.x-this.x3)*(this.y1-this.y3);
+     alert(s1.toString()+" "+s2.toString()+" "+s3.toString());
+     if(s1==s2&&s2==s3)*/
+//barycentric coordinates
+var lambda1=parseFloat((this.y2-this.y3)*(x-this.x3)+(this.x3-this.x2)*(y-this.y3))/((this.y2-this.y3)*(this.x1-this.x3)+(this.x3-this.x2)*(this.y1-this.y3))
 var lambda2=parseFloat((this.y3-this.y1)*(x-this.x3)+(this.x1-this.x3)*(y-this.y3))/((this.y2-this.y3)*(this.x1-this.x3)+(this.x3-this.x2)*(this.y1-this.y3))
 var lambda3=1-lambda1-lambda2;
-if(lambda1<1&&lambda2<1&&lambda3<1)*/
-if(area(this.x1,this.y1,this.x2,this.y2,x,y)+area(this.x2,this.y2,this.x3,this.y3,x,y)+area(this.x1,this.y1,this.x3,this.y3,x,y)==area(this.x1,this.y1,this.x2,this.y2,this.x3,this.y3))
-    return true;
+if(lambda1>=0&&lambda1<=1&&lambda2>=0&&lambda2<=1&&lambda3>=0&&lambda3<=1)
+
+   return true;
 else
     return false;
 }

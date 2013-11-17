@@ -26,6 +26,7 @@ function canvasApp()
     canvasInit("canvasOne",2.5);
 
     var shapes=new Array();
+
     var rect=new Rectangle("canvasOne",50,50,20,20,"black","#FBB829");
     shapes.push(rect);
 
@@ -44,9 +45,15 @@ function canvasApp()
     displayPicture("canvasOne","Images/lionface.png",792,1009,15,4,1,4,0.05,0.05);
 
     window.addEventListener("click",isInside,false);
+
     function isInside(event)
-    {
-       alert(triangle.isPointInside(event.pageX,event.pageY));
+    {   var hit=false;
+        for(var i=0;i<shapes.length;i++)
+        {
+         if(shapes[i].isPointInside(event.pageX,event.pageY))
+            hit=true;
+        }
+       alert(hit);
     }
 
 }
