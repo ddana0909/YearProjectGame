@@ -23,19 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Shapes.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Shapes.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Shapes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="7" selection-start="544" selection-end="544" vertical-scroll-proportion="0.8031496" vertical-offset="0" max-vertical-offset="425">
+            <state line="19" column="26" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShapeGame.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ShapeGame.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/ShapeGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="6" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0" vertical-offset="1344" max-vertical-offset="1904">
+            <state line="102" column="28" selection-start="3172" selection-end="3172" vertical-scroll-proportion="0.3321918" vertical-offset="1637" max-vertical-offset="2924">
               <folding />
             </state>
           </provider>
@@ -44,12 +44,8 @@
       <file leaf-file-name="Engine.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="4026" max-vertical-offset="4420">
-              <folding>
-                <element signature="e#2711#2836#0" expanded="false" />
-                <element signature="e#2881#2934#0" expanded="false" />
-                <element signature="n#!!block;n#drawCircle#0" expanded="false" />
-              </folding>
+            <state line="201" column="24" selection-start="5080" selection-end="5080" vertical-scroll-proportion="-2.52" vertical-offset="3354" max-vertical-offset="5916">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,6 +56,11 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -73,10 +74,31 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-5" />
+    <option name="width" value="1366" />
+    <option name="height" value="728" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JSUnfilteredForInLoop</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -133,6 +155,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Style" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Shapes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Shapes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -144,26 +180,24 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="settings.github" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Confirmation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Shapes.html">
-    <configuration default="false" name="Shapes.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:50070/Shapes/Shapes.html">
+  <component name="RunManager" selected="JavaScript Debug.Shapes.html (1)">
+    <configuration default="false" name="Shapes.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" engineId="firefox" uri="http://localhost:50070/Shapes/Shapes.html">
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
+    <configuration default="false" name="Shapes.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/Shapes/Shapes.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -174,6 +208,14 @@
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -187,12 +229,14 @@
       <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Shapes.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Shapes.html (1)" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Shapes.html" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Shapes.html (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Shapes.html" />
       </list>
     </recent_temporary>
   </component>
@@ -224,18 +268,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-5" y="0" width="1366" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29016393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28956228" sideWeight="0.68" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.70983607" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3445946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1562963" sideWeight="0.5993266" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4006734" sideWeight="0.7585185" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29016393" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4006734" sideWeight="0.24148148" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -253,13 +297,35 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="39" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Shapes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="7" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/ShapeGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="6" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="1904">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="4760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Shapes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="7" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="425">
@@ -277,11 +343,7 @@
     <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="5" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="3520" max-vertical-offset="3927">
-          <folding>
-            <element signature="e#2711#2836#0" expanded="false" />
-            <element signature="e#2881#2934#0" expanded="false" />
-            <element signature="n#!!block;n#drawCircle#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -302,11 +364,7 @@
     <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="128" column="1" selection-start="3478" selection-end="3478" vertical-scroll-proportion="0.0" vertical-offset="1963" max-vertical-offset="3281">
-          <folding>
-            <element signature="e#2711#2836#0" expanded="false" />
-            <element signature="e#2881#2934#0" expanded="false" />
-            <element signature="n#!!block;n#drawCircle#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -327,11 +385,7 @@
     <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="23" selection-start="2160" selection-end="2160" vertical-scroll-proportion="0.0" vertical-offset="1276" max-vertical-offset="2550">
-          <folding>
-            <element signature="e#2711#2836#0" expanded="false" />
-            <element signature="e#2881#2934#0" expanded="false" />
-            <element signature="n#!!block;n#drawCircle#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -344,27 +398,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/ShapeGame.js">
+    <entry file="file://$PROJECT_DIR$/Shapes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="6" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0" vertical-offset="1344" max-vertical-offset="1904">
+        <state line="19" column="26" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="4026" max-vertical-offset="4420">
-          <folding>
-            <element signature="e#2711#2836#0" expanded="false" />
-            <element signature="e#2881#2934#0" expanded="false" />
-            <element signature="n#!!block;n#drawCircle#0" expanded="false" />
-          </folding>
+        <state line="201" column="24" selection-start="5080" selection-end="5080" vertical-scroll-proportion="-2.52" vertical-offset="3354" max-vertical-offset="5916">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Shapes.html">
+    <entry file="file://$PROJECT_DIR$/Scripts/ShapeGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="7" selection-start="544" selection-end="544" vertical-scroll-proportion="0.8031496" vertical-offset="0" max-vertical-offset="425">
+        <state line="102" column="28" selection-start="3172" selection-end="3172" vertical-scroll-proportion="0.3321918" vertical-offset="1637" max-vertical-offset="2924">
           <folding />
         </state>
       </provider>

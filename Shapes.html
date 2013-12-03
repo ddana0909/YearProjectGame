@@ -1,20 +1,25 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>ShapeGame</title>
+    <link rel="stylesheet" type="text/css" href="Style/bootstrap.css">
     <script src="Scripts/modernizr-latest.js"></script>
     <script src="Scripts/ShapeGame.js"></script>
     <script src="Scripts/Engine.js"></script>
     <script type="text/javascript">
     </script>
 </head>
+
 <body>
 <div style="position: absolute; top: 0px; left: 0px; background:#ff0000">
     <canvas id="canvasOne">
         Your browser does not support HTML5 Canvas.
     </canvas>
-    <button  type="button" id="instructions">Play</button>
+    <div class="col-md-1">
+        <button class="btn btn-xs btn-default" type="button" id="instructions">Play Instructions</button>
+    </div>
 </div>
 </body>
 </html>
