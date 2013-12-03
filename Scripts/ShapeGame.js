@@ -34,7 +34,7 @@ function canvasApp()
     getShapeModel(shapeModel);
 
     var settings = getSettingsForGrid("canvasOne",0.05,0.01,15,7,50,50,4,7);
-    var square=new Rectangle("canvasOne",settings.width,settings.height,settings.positionOnX, settings.positionOnY,"black","#8A9B0F");
+    var square=new Square("canvasOne",settings.width,settings.height,settings.positionOnX, settings.positionOnY,"black","#8A9B0F");
     shapes.push(square);
 
     var cSettings=getSettingsForGrid("canvasOne",0.05,0.01,15,7,50,50,6,7);
@@ -132,12 +132,12 @@ function mouseUpEvent(event)
             }
            if(getObjectType(shapeModel[indexOfMin])==getObjectType(shapes[0]))
                 match=true;
-           else
-                 alert("bai! ce vrei sa faci?")
+
         }
         if(nrMatch==1)
             if(getObjectType(shapeModel[shapeIndex[0]])==getObjectType(shapes[0]))
-            {match=true;
+            {
+             match=true;
              indexOfMin=shapeIndex[0];
             }
 
@@ -145,7 +145,7 @@ function mouseUpEvent(event)
         //displayPicture("canvasOne","Images/lionface.png",792,1009,15,4,1,4,0.01,0.01);
         if(match)
         {
-        alert('GOOD!');
+        //alert('GOOD!');
         shapeModel[indexOfMin].fillColor=shapes[0].fillColor;
         drawShapeArray(shapeModel);
         }

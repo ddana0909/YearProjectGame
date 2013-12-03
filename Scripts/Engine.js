@@ -28,6 +28,15 @@ function drawShapeArray(shapes)
         shapes[i].draw();
 }
 
+function GeometricShape(canvasName, positionX, positionY,color,fillColor)
+{
+    this.canvasName=canvasName;
+    this.positionOnX=positionX;
+    this.positionOnY=positionY;
+    this.color=color;
+    this.fillColor=fillColor;
+}
+
 
 function distanceBetweenPoints(x1,y1,x2,y2)
 {
@@ -51,16 +60,16 @@ function playSound()
 
 Sound.prototype.playSound=playSound;
 
+
 function Rectangle(canvasName,width, height, positionX, positionY,color,fillColor)
 {
-    this.canvasName=canvasName;
+    GeometricShape.call(this,canvasName,positionX,positionY,color,fillColor);
     this.width=width;
     this.height=height;
-    this.positionX=positionX;
-    this.positionY=positionY;
-    this.color=color;
-    this.fillColor=fillColor;
+
 }
+
+Rectangle.prototype= new GeometricShape();
 
 Rectangle.prototype.draw=drawRectangle;
 
@@ -68,11 +77,11 @@ Rectangle.prototype.area=areaRectangle;
 
 Rectangle.prototype.isPointInside = function (x, y)
 {
-    if (x < this.positionX || x > this.positionX + this.width) {
+    if (x < this.positionOnX || x > this.positionOnX + this.width) {
         //alert("x"+x.toString()+" "+ y.toString()+" "+this.positionX.toString()+" "+(this.positionX+this.width).toString());
         return false;
     }
-    if (y < this.positionY || y > this.positionY + this.height) {
+    if (y < this.positionOnY || y > this.positionOnY + this.height) {
         //alert("y"+x.toString()+" "+ y.toString()+" "+this.positionY.toString()+" "+(this.positionY+this.height).toString());
         return false;
     }
@@ -82,8 +91,8 @@ Rectangle.prototype.isPointInside = function (x, y)
 
 Rectangle.prototype.move=function(newX, newY)
 {
-    this.positionX=newX;
-    this.positionY=newY;
+    this.positionOnX=newX;
+    this.positionOnY=newY;
 };
 
 function drawRectangle()
@@ -93,7 +102,7 @@ function drawRectangle()
     context.strokeStyle = this.color;
     context.lineWidth = 3;
 
-    context.rect(this.positionX, this.positionY, this.width,this.height);
+    context.rect(this.positionOnX, this.positionOnY, this.width,this.height);
 
     context.stroke();
     if(this.fillColor)
@@ -112,20 +121,18 @@ function areaRectangle()
 
 function Circle(canvasName,positionX,positionY,radius,color,fillColor)
 {
-    this.canvasName=canvasName;
-    this.positionX=positionX;
-    this.positionY=positionY;
+    GeometricShape.call(this,canvasName,positionX,positionY,color,fillColor);
     this.radius=radius;
-    this.color=color;
-    this.fillColor=fillColor;
 }
+
+Circle.prototype= new GeometricShape();
 
 Circle.prototype.draw=drawCircle;
 
 Circle.prototype.area=areaCircle;
 
 Circle.prototype.isPointInside = function (x, y) {
-    return distanceBetweenPoints(this.positionX, this.positionY, x, y) <= this.radius;
+    return distanceBetweenPoints(this.positionOnX, this.positionOnY, x, y) <= this.radius;
 
 };
 
@@ -140,7 +147,7 @@ function drawCircle()
     context.beginPath();
     context.strokeStyle = this.color;
     context.lineWidth = 3;
-    context.arc(this.positionX, this.positionY, this.radius, 0, (Math.PI/180)*360, false);
+    context.arc(this.positionOnX, this.positionOnY, this.radius, 0, (Math.PI/180)*360, false);
     context.stroke();
     context.closePath();
     if(this.fillColor)
@@ -157,18 +164,16 @@ function areaCircle()
 
 function Triangle(canvasName,positionX,positionY,height,basisLength,color, fillColor)
 {
-    this.canvasName=canvasName;
+    GeometricShape.call(this,canvasName,positionX,positionY,color,fillColor);
     this.height=height;
     this.basisLength=basisLength;
-    this.color=color;
-    this.fillColor=fillColor;
-    this.positionX=positionX;
-    this.positionY=positionY;
-    this.x2 =this.positionX -basisLength/2;
-    this.y2 = this.positionY + height;
-    this.x3 = this.positionX + basisLength/2;
+    this.x2 =this.positionOnX -basisLength/2;
+    this.y2 = this.positionOnY + height;
+    this.x3 = this.positionOnX + basisLength/2;
     this.y3 = this.y2;
 }
+
+Triangle.prototype=new GeometricShape();
 
 Triangle.prototype.draw = drawTriangle;
 
@@ -177,8 +182,8 @@ Triangle.prototype.area=areaTriangle;
 Triangle.prototype.isPointInside = function (x, y) {
 
     //barycentric coordinates
-    var lambda1 = parseFloat((this.y2 - this.y3) * (x - this.x3) + (this.x3 - this.x2) * (y - this.y3)) / ((this.y2 - this.y3) * (this.positionX - this.x3) + (this.x3 - this.x2) * (this.positionY - this.y3));
-    var lambda2 = parseFloat((this.y3 - this.positionY) * (x - this.x3) + (this.positionX - this.x3) * (y - this.y3)) / ((this.y2 - this.y3) * (this.positionX - this.x3) + (this.x3 - this.x2) * (this.positionY - this.y3));
+    var lambda1 = parseFloat((this.y2 - this.y3) * (x - this.x3) + (this.x3 - this.x2) * (y - this.y3)) / ((this.y2 - this.y3) * (this.positionOnX - this.x3) + (this.x3 - this.x2) * (this.positionOnY - this.y3));
+    var lambda2 = parseFloat((this.y3 - this.positionOnY) * (x - this.x3) + (this.positionOnX - this.x3) * (y - this.y3)) / ((this.y2 - this.y3) * (this.positionOnX - this.x3) + (this.x3 - this.x2) * (this.positionOnY - this.y3));
     var lambda3 = 1 - lambda1 - lambda2;
 
     return lambda1 >= 0 && lambda1 <= 1 && lambda2 >= 0 && lambda2 <= 1 && lambda3 >= 0 && lambda3 <= 1;
@@ -186,10 +191,10 @@ Triangle.prototype.isPointInside = function (x, y) {
 };
 
 Triangle.prototype.move = function (newX, newY) {
-    var dx = this.positionX - newX;
-    var dy = this.positionY - newY;
-    this.positionX = newX;
-    this.positionY = newY;
+    var dx = this.positionOnX - newX;
+    var dy = this.positionOnY - newY;
+    this.positionOnX = newX;
+    this.positionOnY = newY;
     this.x2 -= dx;
     this.y2 -= dy;
     this.x3 -= dx;
@@ -202,10 +207,10 @@ function drawTriangle()
     context.beginPath();
     context.strokeStyle = this.color;
     context.lineWidth = 3;
-    context.moveTo(this.positionX, this.positionY);
+    context.moveTo(this.positionOnX, this.positionOnY);
     context.lineTo(this.x2, this.y2);
     context.lineTo(this.x3, this.y3);
-    context.lineTo(this.positionX, this.positionY);
+    context.lineTo(this.positionOnX, this.positionOnY);
     context.stroke();
     if (this.fillColor)
     {
@@ -218,6 +223,13 @@ function areaTriangle()
 {
     return (this.basisLength*this.height)/2;
 }
+
+function Square(canvasName,width, height, positionX, positionY,color,fillColor)
+{
+    Rectangle.call(this,canvasName,width, height, positionX, positionY,color,fillColor)
+}
+
+Square.prototype=new Rectangle();
 
 function Picture(source, width, height)
 {
@@ -297,7 +309,7 @@ function displayPicture(canvasName,source, width, height, gridColumns, gridRows,
 function getShapeModel(shapeModel)
 {
     var settings = getSettingsForGrid("canvasOne",0.05,0.01,3,3,150,150,2,2);
-    var square=new Rectangle("canvasOne",settings.width,settings.height,settings.positionOnX, settings.positionOnY,"black","#FBB829");
+    var square=new Square("canvasOne",settings.width,settings.height,settings.positionOnX, settings.positionOnY,"black","#FBB829");
     shapeModel.push(square);
 
     var cSettings=getSettingsForGrid("canvasOne",0.05,0.01,3,3,50,50,2,2);
@@ -323,6 +335,7 @@ function getShapeModel(shapeModel)
     shapeModel.push(vrectangle);
 }
 var myClasses=[];
+myClasses["Square"]=Square;
 myClasses["Rectangle"]=Rectangle;
 myClasses["Circle"]=Circle;
 myClasses["Triangle"]=Triangle;
