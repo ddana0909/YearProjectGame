@@ -2,7 +2,7 @@
  * Created by Dana on 11/2/13.
  */
 
-//<reference path="Scripts/Engine.js"/>
+//<reference path="scripts/engine.js"/>
 
 window.addEventListener("load", eventWindowLoaded, false);
 function eventWindowLoaded()
@@ -20,12 +20,21 @@ function OnResize()
     clearArray(shapeModel);
     canvasApp();
 }
-
+var draggedShape;
 var shapes=[];
 var dx,dy;
 //var shapeIndex;
 var shapeModel=[];
+var targetX;
+var targetY;
+var easeAmount=0.45;
+var hit=false;
+var mouseX;
+var mouseY;
+var dragHoldX;
+var dragHoldY;
 
+var onMoveShape;
 
 function canvasApp()
 {   if(!canvasSupport())
@@ -65,22 +74,35 @@ function canvasApp()
 
 function mouseDownEvent(event)
 {   var shapeIndex;
-    var hit=false;
+    mouseX=event.pageX;
+    mouseY=event.pageY;
     for(var i=0;i<shapes.length;i++)
     {
         if(shapes[i].isPointInside(event.pageX,event.pageY))
         {
             hit=true;
             shapeIndex=i;
+            break;
         }
     }
     if(hit)
     {  canvasOne.addEventListener("mousemove",mouseMoveEvent,false);
         var selectedShape=shapes[shapeIndex]; //select
+        draggedShape=shapes[shapeIndex];
         shapes.splice(shapeIndex,1);                            //delete
         shapes.unshift(selectedShape);
 
 
+
+        dragHoldX = mouseX - draggedShape.positionOnX;
+        dragHoldY = mouseY - draggedShape.positionOnY;
+
+        targetX = draggedShape.positionOnX;
+        targetY = draggedShape.positionOnY;
+
+        timer=setInterval(onTimerTick, 1000/30);
+
+        onMoveShape=shapes[0];
         dx=shapes[0].positionX-event.pageX;
         dy=shapes[0].positionY-event.pageY;
 
@@ -90,14 +112,61 @@ function mouseDownEvent(event)
         window.addEventListener("mouseup",mouseUpEvent,false);
 }
 
+function onTimerTick() {
+
+    //draggedShape.positionOnX +=  easeAmount*(targetX - draggedShape.positionOnX);
+    draggedShape.move(draggedShape.positionOnX+easeAmount*(targetX-draggedShape.positionOnX),draggedShape.positionOnY+easeAmount*(targetY-draggedShape.positionOnY));
+    //draggedShape.positionOnY +=  easeAmount*(targetY - draggedShape.positionOnY);
+
+    //stop the timer when the target position is reached (close enough)
+    if ((!hit)&&(Math.abs(draggedShape.positionOnX - targetX) < 0.1) && (Math.abs(draggedShape.positionOnY - targetY) < 0.1)) {
+        draggedShape.move(targetX, targetY);
+        /*draggedShape.positionOnX = targetX;
+        draggedShape.positionOnY = targetY;*/
+
+        //stop timer:
+        clearInterval(timer);
+    }
+    drawScreen();
+}
+function drawScreen()
+{
+    //canvasInit("canvasOne",2.5);
+    //displayPicture("canvasOne","Images/lionface.png",792,1009,15,4,1,4,0.01,0.01);
+    getCanvasContext("canvasOne").clearRect(100,0, canvasOne.width-100, canvasOne.height);//setge chestiile dinainte
+    drawShapeArray(shapes);
+    drawShapeArray(shapeModel);
+
+    if(hit==true)
+    draggedShape.draw();
+}
 function mouseMoveEvent(event)
     {
-        //var newPositionX=event.pageX+dx;
-        //var newPositionY=event.pageY+dy;
+            var posX;
+            var posY;
+            var shapeRad = draggedShape.width;
+            var minX = shapeRad;
+            var maxX = canvasOne.width - shapeRad;
+            var minY = shapeRad;
+            var maxY = canvasOne.height - shapeRad;
 
-        //shapes[0].move(newPositionX,newPositionY);
+            mouseX=event.clientX;
+            mouseY=event.clientY;
 
-        canvasOne.addEventListener("mouseup",mouseUpEvent,false);
+            //getting mouse position correctly
+            /*var bRect = canvasOne.getBoundingClientRect();
+            mouseX = (event.clientX - bRect.left)*(canvasOne.width/bRect.width);
+            mouseY = (event.clientY - bRect.top)*(canvasOne.height/bRect.height);*/
+
+            //clamp x and y positions to prevent object from dragging outside of canvas
+            posX = mouseX - dragHoldX;
+            posX = (posX < minX) ? minX : ((posX > maxX) ? maxX : posX);
+            posY = mouseY - dragHoldY;
+            posY = (posY < minY) ? minY : ((posY > maxY) ? maxY : posY);
+
+            targetX = posX;
+            targetY = posY;
+
     }
 
 function mouseUpEvent(event)
@@ -108,6 +177,7 @@ function mouseUpEvent(event)
         var match=false;
         var shapeIndex=[];
         var indexOfMin=0;
+        hit=false;
 
         for(var i=0;i<shapeModel.length;i++)
         {
@@ -130,12 +200,12 @@ function mouseUpEvent(event)
                     indexOfMin = indexInShapeModel;
                 }
             }
-           if(getObjectType(shapeModel[indexOfMin])==getObjectType(shapes[0]))
+           if(getObjectType(shapeModel[indexOfMin])==getObjectType(draggedShape))
                 match=true;
 
         }
         if(nrMatch==1)
-            if(getObjectType(shapeModel[shapeIndex[0]])==getObjectType(shapes[0]))
+            if(getObjectType(shapeModel[shapeIndex[0]])==getObjectType(draggedShape))
             {
              match=true;
              indexOfMin=shapeIndex[0];
@@ -146,9 +216,13 @@ function mouseUpEvent(event)
         if(match)
         {
         //alert('GOOD!');
-        shapeModel[indexOfMin].fillColor=shapes[0].fillColor;
-        drawShapeArray(shapeModel);
+        shapeModel[indexOfMin].fillColor=draggedShape.fillColor;
+        /*drawShapeArray(shapeModel);*/
+        shapes.splice(0,1); //sterge forma din lista
+
+        drawScreen();
         }
+        //draggedShape=0;
     }
 
 function playSound() {

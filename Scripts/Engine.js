@@ -8,7 +8,7 @@ function canvasInit(canvasName,aspectRatio)
     var canvas = document.getElementById(canvasName);
     canvas.width = window.innerWidth;
     canvas.height = canvas.width/aspectRatio;
-    getCanvasContext("canvasOne").clearRect(0, 0, canvasOne.width, canvasOne.height);
+
 }
 
 function canvasSupport ()
@@ -28,13 +28,14 @@ function drawShapeArray(shapes)
         shapes[i].draw();
 }
 
-function GeometricShape(canvasName, positionX, positionY,color,fillColor)
+function GeometricShape(canvasName, positionX, positionY,color,fillColor, width)
 {
     this.canvasName=canvasName;
     this.positionOnX=positionX;
     this.positionOnY=positionY;
     this.color=color;
     this.fillColor=fillColor;
+    this.width=width;
 }
 
 
@@ -63,14 +64,19 @@ Sound.prototype.playSound=playSound;
 
 function Rectangle(canvasName,width, height, positionX, positionY,color,fillColor)
 {
-    GeometricShape.call(this,canvasName,positionX,positionY,color,fillColor);
-    this.width=width;
+    GeometricShape.call(this,canvasName,positionX,positionY,color,fillColor,width);
+    //this.width=width;
     this.height=height;
 
 }
-
+function assignRect( sourceName)
+{var i;
+    for(i in this)
+        this[i]=sourceName;
+}
 Rectangle.prototype= new GeometricShape();
 
+Rectangle.assign=assignRect;
 Rectangle.prototype.draw=drawRectangle;
 
 Rectangle.prototype.area=areaRectangle;
@@ -121,8 +127,8 @@ function areaRectangle()
 
 function Circle(canvasName,positionX,positionY,radius,color,fillColor)
 {
-    GeometricShape.call(this,canvasName,positionX,positionY,color,fillColor);
-    this.radius=radius;
+    GeometricShape.call(this,canvasName,positionX,positionY,color,fillColor, radius);
+
 }
 
 Circle.prototype= new GeometricShape();
@@ -132,22 +138,21 @@ Circle.prototype.draw=drawCircle;
 Circle.prototype.area=areaCircle;
 
 Circle.prototype.isPointInside = function (x, y) {
-    return distanceBetweenPoints(this.positionOnX, this.positionOnY, x, y) <= this.radius;
+    return distanceBetweenPoints(this.positionOnX, this.positionOnY, x, y) <= this.width;
 
 };
 
 Circle.prototype.move = function (newX, newY) {
-    this.positionX = newX;
-    this.positionY = newY;
+    this.positionOnX = newX;
+    this.positionOnY = newY;
 };
-
 function drawCircle()
 {
     var context=getCanvasContext(this.canvasName);
     context.beginPath();
     context.strokeStyle = this.color;
     context.lineWidth = 3;
-    context.arc(this.positionOnX, this.positionOnY, this.radius, 0, (Math.PI/180)*360, false);
+    context.arc(this.positionOnX, this.positionOnY, this.width, 0, (Math.PI/180)*360, false);
     context.stroke();
     context.closePath();
     if(this.fillColor)
@@ -159,7 +164,7 @@ function drawCircle()
 
 function areaCircle()
 {
-    return Math.PI*Math.pow(this.radius,2);
+    return Math.PI*Math.pow(this.width,2);
 }
 
 function Triangle(canvasName,positionX,positionY,height,basisLength,color, fillColor)
