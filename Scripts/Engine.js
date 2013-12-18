@@ -65,10 +65,9 @@ Sound.prototype.playSound=playSound;
 function Rectangle(canvasName,width, height, positionX, positionY,color,fillColor)
 {
     GeometricShape.call(this,canvasName,positionX,positionY,color,fillColor,width);
-    //this.width=width;
     this.height=height;
-
 }
+
 function assignRect( sourceName)
 {var i;
     for(i in this)
@@ -231,16 +230,46 @@ function areaTriangle()
 
 function Square(canvasName,width, height, positionX, positionY,color,fillColor)
 {
-    Rectangle.call(this,canvasName,width, height, positionX, positionY,color,fillColor)
+    Rectangle.call(this,canvasName,width, height, positionX, positionY,color,fillColor);
 }
-
 Square.prototype=new Rectangle();
+
+function VRectangle(canvasName,width, height, positionX, positionY,color,fillColor)
+{
+    if(height<width) //daca nu e vertical
+         {
+          var aux=height;
+          height=width;
+          width=aux;
+         }
+        Rectangle.call(this,canvasName,width, height, positionX, positionY,color,fillColor);
+}
+VRectangle.prototype=new Rectangle();
 
 function Picture(source, width, height)
 {
     this.source=source;
     this.width=width;
     this.height=height;
+}
+var shapeTypes=[];
+shapeTypes["Square"]=Square;
+shapeTypes["VRectangle"]=VRectangle;
+shapeTypes["Rectangle"]=Rectangle;
+shapeTypes["Circle"]=Circle;
+shapeTypes["Triangle"]=Triangle;
+
+
+function getObjectType(obj)
+{
+    for(var oType in shapeTypes)
+        if(obj instanceof shapeTypes[oType])
+            return oType;
+}
+
+function clearArray(name)
+{
+    name.splice(0,name.length);
 }
 
 function adjustDimensionsForGrid(cellHeight, cellWidth, height, width)
@@ -336,25 +365,9 @@ function getShapeModel(shapeModel)
     rvSettings.height=settings.height/2;
     rvSettings.positionOnY-=(rvSettings.height+(rvSettings.positionOnY-settings.positionOnY+3));
     rvSettings.positionOnX=settings.positionOnX+rvSettings.width;
-    var vrectangle=new Rectangle("canvasOne",rvSettings.width,rvSettings.height,rvSettings.positionOnX, rvSettings.positionOnY,"black","#FBB829");
+    var vrectangle=new VRectangle("canvasOne",rvSettings.width,rvSettings.height,rvSettings.positionOnX, rvSettings.positionOnY,"black","#FBB829");
     shapeModel.push(vrectangle);
 }
-var myClasses=[];
-myClasses["Square"]=Square;
-myClasses["Rectangle"]=Rectangle;
-myClasses["Circle"]=Circle;
-myClasses["Triangle"]=Triangle;
 
-function getObjectType(obj)
-{
-    for(var oType in myClasses)
-        if(obj instanceof myClasses[oType])
-            return oType;
-}
-
-function clearArray(name)
-{
-    name.splice(0,name.length);
-}
 
 
